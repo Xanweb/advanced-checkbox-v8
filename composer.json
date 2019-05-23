@@ -1,0 +1,14 @@
+{
+  "name": "xanweb/form_advanced_checkbox",
+  "type": "concrete5-package",
+  "description": "Checkbox attribute with CkEditor label",
+  "keywords": ["checkbox", "attribute"],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.9",
+    "composer/installers": ">=1.0.7"
+  },
+  "support": {
+    "source": "https://gitlab.xanweb.de/concrete58-packages/form-advanced-checkbox"
+  }
+}
