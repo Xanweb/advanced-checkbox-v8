@@ -1,5 +1,13 @@
-# advanced-checkbox-v8
-This adds a new attribute to concrete5 Forms with CK-Editor
+#  Form Advanced Checkbox
 
-You can also choose to display the question label or not. This is helpful if you want to add a checkbox to your forms for accepting
-legal terms... with a link to an other page
+Checkbox attribute with CkEditor label.
+
+## Install
+
+```bash
+ composer require xanweb/form_advanced_checkbox
+
+ concrete/bin/concrete5 c5:package-install form_advanced_checkbox
+```
+
+![icon](https://www.xanweb.com/packages/soprano_theme/themes/soprano/images/logo-xanweb.svg)  

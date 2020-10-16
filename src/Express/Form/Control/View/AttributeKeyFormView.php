@@ -9,10 +9,11 @@ class AttributeKeyFormView extends CoreAttributeKeyFormView
     public function __construct(ContextInterface $context, $control)
     {
         parent::__construct($context, $control);
-        if ('advanced_checkbox' == $this->key->getAttributeTypeHandle()) {
+
+        if ($this->key->getAttributeTypeHandle() == 'advanced_checkbox') {
             $this->view->setSupportsLabel($this->key->getAttributeKeySettings()->supportsTitle());
             // Hide asterix / Required term if no label is displayed
-            if(!$this->view->supportsLabel()) {
+            if (!$this->view->supportsLabel()) {
                 $this->view->setIsRequired(false);
             }
         }

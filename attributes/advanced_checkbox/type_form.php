@@ -8,21 +8,20 @@ $editor->getPluginManager()->deselect(['table', 'underline', 'specialcharacters'
 ?>
 
 <fieldset>
-    <legend><?php echo t('Settings'); ?></legend>
+    <legend><?= t('Settings'); ?></legend>
 
     <div class="form-group">
         <div class="checkbox">
             <label>
-                <?php echo $form->checkbox('akShowTitle', 1, $akShowTitle); ?>
-                <?php echo t('Display question label'); ?>
+                <?= $form->checkbox('akShowTitle', 1, $akShowTitle); ?>
+                <?= t('Display question label'); ?>
             </label>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="control-label"><?php echo t("Checkbox content"); ?></label>
-        <?php echo $editor->outputStandardEditor('akContent', LinkAbstractor::translateFromEditMode($akContent)); ?>
-        <p class="help-block"><?php echo t('This will be displayed next to the checkbox. If it is blank, the name of the attribute will be displayed.');?></p>
+        <label class="control-label"><?= t("Checkbox content"); ?></label>
+        <?= $editor->outputStandardEditor('akContent', LinkAbstractor::translateFromEditMode($akContent)); ?>
+        <p class="help-block"><?= t('This will be displayed next to the checkbox. If it is blank, the name of the attribute will be displayed.');?></p>
     </div>
-
 </fieldset>

@@ -1,6 +1,8 @@
 <?php
 namespace Concrete\Package\FormAdvancedCheckbox;
 
+use Concrete\Core\Database\EntityManager\Provider\StandardPackageProvider;
+use Concrete\Core\Database\EntityManager\Provider\ProviderAggregateInterface;
 use Concrete\Package\FormAdvancedCheckbox\Express\Form\Control\View\AttributeKeyFormView;
 use Concrete\Core\Attribute\Category\CategoryService;
 use Concrete\Core\Attribute\TypeFactory;
@@ -9,12 +11,11 @@ use Concrete\Core\Form\Context\Registry\ControlRegistry;
 use Concrete\Core\Support\Facade\Facade;
 use Concrete\Core\Package\Package;
 
-class Controller extends Package
+class Controller extends Package implements ProviderAggregateInterface
 {
     protected $pkgHandle = 'form_advanced_checkbox';
-    protected $appVersionRequired = '8.1.0';
-    protected $pkgVersion = '0.9.1';
-
+    protected $appVersionRequired = '8.2.1';
+    protected $pkgVersion = '1.0.0';
     protected $pkgAutoloaderRegistries = [
         'src' => 'Concrete\Package\FormAdvancedCheckbox',
     ];
@@ -66,5 +67,15 @@ class Controller extends Package
                 $db->executeQuery(sprintf('DROP TABLE %s', $table));
             }
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEntityManagerProvider()
+    {
+        return new StandardPackageProvider($this->app, $this, [
+            'src/Concrete/Entity' => __NAMESPACE__ . '\Entity',
+        ]);
     }
 }
